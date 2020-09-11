@@ -1,0 +1,220 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 960,
+        "FACILITYID": 28014,
+        "NAME": "Bali Resort Bearbrook ",
+        "NAME_FR": "Bali Resort Bearbrook",
+        "ADDRESS": "8720 Russell Road",
+        "ADDRESS_FR": "8720, chemin Russell",
+        "FACILITY_T": "flat",
+        "FACILITY_1": "plat",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Neighbourhood : smaller size facility to service population of 10,000 or less",
+        "FACILITY_F": "De voisinage : petite installation assurant des services à 10 000 résidents ou moins.",
+        "DESCRIPTIO": "Bali Resort located in Bearbrook street ",
+        "DESCRIPT_1": "Surface d'asphalte plane, 5 modules",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.288928, -8.575414]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1219,
+        "FACILITYID": 28001,
+        "NAME": "Bali Resort Sali",
+        "NAME_FR": "Bali Resort Sali",
+        "ADDRESS": "1490 Youville Drive",
+        "ADDRESS_FR": "1490, promenade Youville",
+        "FACILITY_T": "other",
+        "FACILITY_1": "autre",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community: mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Sali street",
+        "DESCRIPT_1": "Surface d'asphalte plane, 10 modules, programmes et camps de planche à roulettes en été géré par la Ville",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.226106, -8.795782]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Bali Resort Angsri",
+        "NAME_FR": "Bali Resort Angsri",
+        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Angsri",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.152756, -8.674775]
+      }
+    },
+
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Bali Resort Tabanan",
+        "NAME_FR": "Bali Resort Tabanan",
+        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Tabanan",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.14853, -8.42726]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Bali Resort Ubud",
+        "NAME_FR": "Bali Resort Ubud",
+        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Ubud",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.24535, -8.43847]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Bali Resort Gianyr",
+        "NAME_FR": "Bali Resort Gianyr",
+        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Gianyr",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [114.97687, -8.44085]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "PARK_ID": 1157,
+        "FACILITYID": 28002,
+        "NAME": "Bali Resort Sukawati",
+        "NAME_FR": "Bali Resort Sukawati",
+        "ADDRESS": "100 Charlie Rogers Place",
+        "ADDRESS_FR": "100, place Charlie Rogers",
+        "FACILITY_T": "bowl",
+        "FACILITY_1": "bol",
+        "ACCESSCTRL": "no/non",
+        "ACCESSIBLE": "no/non",
+        "OPEN": null,
+        "NOTES": "Outdoor",
+        "MODIFIED_D": "2018/01/18",
+        "CREATED_DA": null,
+        "FACILITY": "Community : mid size facility to service population of 40,000 plus",
+        "FACILITY_F": "Communautaire : installation de taille moyenne assurant des services à 40 000 résidents ou plus.",
+        "DESCRIPTIO": "Bali Resort located in Sukawati",
+        "DESCRIPT_1": "Bol de béton, 7 000 pi2",
+        "PICTURE_LI": null,
+        "PICTURE_DE": null,
+        "PICTURE__1": null
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [115.12999, -8.53083]
+      }
+    }
+  ]
+}
