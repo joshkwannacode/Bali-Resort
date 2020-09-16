@@ -2365,46 +2365,6 @@ button.small,
 
 /* Header */
 
-@-moz-keyframes reveal-header {
-  0% {
-    top: -5em;
-  }
-
-  100% {
-    top: 0;
-  }
-}
-
-@-webkit-keyframes reveal-header {
-  0% {
-    top: -5em;
-  }
-
-  100% {
-    top: 0;
-  }
-}
-
-@-ms-keyframes reveal-header {
-  0% {
-    top: -5em;
-  }
-
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes reveal-header {
-  0% {
-    top: -5em;
-  }
-
-  100% {
-    top: 0;
-  }
-}
-
 #header {
   background: #fff;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
@@ -2535,59 +2495,6 @@ button.small,
 }
 
 /* Dropotron */
-
-.dropotron {
-  list-style: none;
-  padding-left: 0;
-  background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
-  line-height: 2.25em;
-  min-width: 13em;
-  padding: 1em 0;
-  text-transform: uppercase;
-  margin-top: calc(-1em + 1px);
-}
-
-.dropotron.level-0 {
-  font-size: 0.7em;
-  font-weight: 400;
-  margin-top: 1.5em;
-}
-
-.dropotron.level-0:before {
-  border-bottom: solid 0.5em #fff;
-  border-left: solid 0.5em transparent;
-  border-right: solid 0.5em transparent;
-  content: "";
-  left: 0.75em;
-  position: absolute;
-  top: -0.45em;
-}
-
-.dropotron > li {
-  border-top: solid 1px rgba(124, 128, 129, 0.2);
-  padding-left: 0;
-}
-
-.dropotron > li > a {
-  -moz-transition: none;
-  -webkit-transition: none;
-  -ms-transition: none;
-  transition: none;
-  color: inherit;
-  text-decoration: none;
-  padding: 0 1em;
-  border: 0;
-}
-
-.dropotron > li:hover > a {
-  background: #83d3c9;
-  color: #fff;
-}
-
-.dropotron > li:first-child {
-  border-top: 0;
-}
 
 /* Banner */
 
@@ -3026,10 +2933,6 @@ body.index #main {
 
   /* Header */
 
-  #header {
-    display: none;
-  }
-
   /* Banner */
 
   #banner {
@@ -3279,9 +3182,18 @@ body.index #main {
   }
 
   /* Section/Article */
+  #header {
+    background: #fff;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.075);
+    color: inherit;
+    cursor: default;
+    font-size: 0.5em;
+    left: 0;
 
-  header {
-    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
   }
 
   header.major {
@@ -3441,7 +3353,9 @@ body.index #main {
   }
 
   /* Nav */
-
+  #nav {
+    margin-top: -1vh;
+  }
   #navButton .toggle:before {
     top: 8px;
     left: 8px;
@@ -3466,7 +3380,24 @@ body.index #main {
     margin-top: 10vh;
   }
 }
-
+@media (max-width: 540px) {
+  #nav {
+    margin-top: -0.5vh;
+  }
+}
+@media (max-width: 430px) {
+  #nav {
+    margin-top: -0.8vh;
+  }
+}
+@media (max-width: 330px) {
+  #header {
+    font-size: 0.4em;
+  }
+  #nav {
+    margin-top: -1vh;
+  }
+}
 /* Reservation Page */
 input[type="radio"],
 input[type="checkbox"] {
@@ -3502,7 +3433,7 @@ input[type="checkbox"] {
   margin-top: 10vh;
 }
 .rooms-name {
-  margin-top: -1vh;
+  margin-top: 1vh;
   margin-left: 10vw;
 }
 .rooms-img {

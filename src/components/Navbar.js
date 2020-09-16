@@ -1,28 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const [navbar, setNavbar] = useState(false);
-
-  const changeBackground = () => {
-    console.log(window.scrollY);
-    if (window.scrollY >= 100) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener("scroll", changeBackground);
-
   return (
     <div>
-      <header id="header" className={navbar ? "navbar d" : "navbar"}>
+      <header id="header" className="navbar">
         {/*className= alt*/}
         <h1 id="logo">
-          <a href="#">
-            Bali <span>by Bali Resort</span>
-          </a>
+          Bali <span>by Bali Resort</span>
         </h1>
 
         <nav id="nav">

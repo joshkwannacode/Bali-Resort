@@ -1,144 +1,56 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as ResortDate from "../data/Bali.json";
 import img from "../assets/images/map.jpg";
 import { Link } from "react-router-dom";
 import "../assets/css/main.css";
-
-let phone = "300";
-let tablet = "760";
-let bigScreen = "2600";
-let bigLaptop = "2000";
-let laptop = "1000";
-let bigMidLaptop = "1400";
-let midLaptop = "1200";
-function useWindowSize() {
-  const [width, setWidth] = useState(calculateWidth());
-  useEffect(() => {
-    function updateSize() {
-      setWidth(calculateWidth());
-    }
-
-    window.addEventListener("resize", updateSize);
-
-    return () => {
-      console.log();
-      window.removeEventListener("resize", updateSize);
-    };
-  }, []);
-
-  function calculateWidth() {
-    if (window.innerWidth <= bigScreen && window.innerWidth >= bigLaptop) {
-      return "47vw";
-    } else if (
-      window.innerWidth <= bigLaptop &&
-      window.innerWidth >= midLaptop
-    ) {
-      return "67vw";
-    } else if (window.innerWidth <= midLaptop && window.innerWidth >= laptop) {
-      return "83vw";
-    } else if (window.innerWidth <= laptop && window.innerWidth >= tablet) {
-      return "83vw";
-    } else if (window.innerWidth <= tablet && window.innerWidth >= phone) {
-      return "83vw";
-    }
-  }
-  return width;
-}
+import mapboxgl from "mapbox-gl";
 
 //For map API location Bali
+mapboxgl.accessToken =
+  "pk.eyJ1Ijoic3RvcGpvc2hrIiwiYSI6ImNrZHBudjkxZDIzZmMyc3Jvb3l6cHp3NnoifQ.aq0U3skvAjqJ7ZS-HloO-w";
 export function Map() {
-  const width = useWindowSize();
-  const [viewport, setViewport] = useState({
-    latitude: -8.340539,
-    longitude: 115.091949,
-    width: width,
-    height: "100vh",
-    zoom: 10,
-  });
+  const mapContainerRef = useRef(null);
+
+  // initialize map when component mounts
   useEffect(() => {
-    setViewport((state) => ({
-      ...state,
-      width: width,
-    }));
-  }, [width]);
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      // See style options here: https://docs.mapbox.com/api/maps/#styles
+      style: "mapbox://styles/stopjoshk/ckdpotpyf0eqg1io81pyz6oek",
+      center: [115.091949, -8.340539],
+      zoom: 10,
+    });
 
-  const [selectedResort, setSelectedResort] = useState(null);
+    // add navigation control (the +/- zoom buttons)
+    map.addControl(new mapboxgl.NavigationControl(), "bottom-right");
+    ResortDate.features.forEach(function (marker) {
+      // create a HTML element for each feature
+      var el = document.createElement("div");
+      el.className = "marker";
 
-  useEffect(() => {
-    const listener = (e) => {
-      if (e.key === "Escape") {
-        setSelectedResort(null);
-      }
-    };
-    window.addEventListener("keydown", listener);
-
-    return () => {
-      window.removeEventListener("keydown", listener);
-    };
-  }, []);
-  return (
-    <div>
-      <div className="map-container">
-        <ReactMapGL
-          {...viewport}
-          mapboxApiAccessToken="pk.eyJ1Ijoic3RvcGpvc2hrIiwiYSI6ImNrZHBudjkxZDIzZmMyc3Jvb3l6cHp3NnoifQ.aq0U3skvAjqJ7ZS-HloO-w"
-          mapStyle="mapbox://styles/stopjoshk/ckdpotpyf0eqg1io81pyz6oek"
-          onViewportChange={(viewport) => {
-            setViewport(viewport);
-          }}
-        >
-          {ResortDate.features.map((Resort) => (
-            <Marker
-              key={Resort.properties.Resort_ID}
-              latitude={Resort.geometry.coordinates[1]}
-              longitude={Resort.geometry.coordinates[0]}
-            >
-              <label type="button">
-                <span
-                  className="marker-btn"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setSelectedResort(Resort);
-                  }}
-                  style={{
-                    padding: "0",
-                    border: "none",
-                    background: "none",
-                    width: "2vw",
-                    outline: "none",
-                  }}
-                >
-                  <img
-                    src={img}
-                    style={{ height: 20, width: 20 }}
-                    alt="Marker-icon"
-                  />
-                </span>
-              </label>
-            </Marker>
-          ))}
-
-          {selectedResort ? (
-            <Popup
-              latitude={selectedResort.geometry.coordinates[1]}
-              longitude={selectedResort.geometry.coordinates[0]}
-              onClose={() => {
-                setSelectedResort(null);
-              }}
-            >
-              <div>
-                <h2>{selectedResort.properties.NAME}</h2>
-                <p>{selectedResort.properties.DESCRIPTIO}</p>
-                <br />
-                <p>{selectedResort.properties.FACILITY}</p>
-              </div>
-            </Popup>
-          ) : null}
-        </ReactMapGL>
-      </div>
-    </div>
-  );
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker(el)
+        .setLngLat(marker.geometry.coordinates)
+        .setPopup(
+          new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(
+              "<h3>" +
+                marker.properties.NAME +
+                "</h3><p>" +
+                marker.properties.DESCRIPTIO +
+                "</p>" +
+                "<p>" +
+                marker.properties.FACILITY +
+                "</p>"
+            )
+        )
+        .addTo(map);
+    });
+    // clean up on unmount
+    return () => map.remove();
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  return <div className="map-container" ref={mapContainerRef} />;
 }
 
 function Layout() {

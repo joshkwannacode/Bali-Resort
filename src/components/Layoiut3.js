@@ -1,3 +1,6 @@
+import React, { useEffect, useState } from "react";
+import "./styles.css";
+
 import React, { useState, useEffect } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import * as ResortDate from "../data/Bali.json";
@@ -5,13 +8,11 @@ import img from "../assets/images/map.jpg";
 import { Link } from "react-router-dom";
 import "../assets/css/main.css";
 
-let phone = "300";
-let tablet = "760";
+let phone = "320";
+let tablet = "900";
 let bigScreen = "2600";
-let bigLaptop = "2000";
+let bigLaptop = "1400";
 let laptop = "1000";
-let bigMidLaptop = "1400";
-let midLaptop = "1200";
 function useWindowSize() {
   const [width, setWidth] = useState(calculateWidth());
   useEffect(() => {
@@ -28,19 +29,14 @@ function useWindowSize() {
   }, []);
 
   function calculateWidth() {
-    if (window.innerWidth <= bigScreen && window.innerWidth >= bigLaptop) {
-      return "47vw";
-    } else if (
-      window.innerWidth <= bigLaptop &&
-      window.innerWidth >= midLaptop
-    ) {
+    if (window.innerWidth < bigScreen && window.innerWidth > bigLaptop) {
+      return "20vw";
+    } else if (window.innerWidth < bigLaptop && window.innerWidth > laptop) {
       return "67vw";
-    } else if (window.innerWidth <= midLaptop && window.innerWidth >= laptop) {
-      return "83vw";
-    } else if (window.innerWidth <= laptop && window.innerWidth >= tablet) {
-      return "83vw";
-    } else if (window.innerWidth <= tablet && window.innerWidth >= phone) {
-      return "83vw";
+    } else if (window.innerWidth < laptop && window.innerWidth > phone) {
+      return "10vw";
+    } else {
+      return "300vw";
     }
   }
   return width;
@@ -56,12 +52,6 @@ export function Map() {
     height: "100vh",
     zoom: 10,
   });
-  useEffect(() => {
-    setViewport((state) => ({
-      ...state,
-      width: width,
-    }));
-  }, [width]);
 
   const [selectedResort, setSelectedResort] = useState(null);
 
